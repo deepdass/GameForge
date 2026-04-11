@@ -1,8 +1,4 @@
 # RetroHorror
-## Idea 
-A retro horror game with unique visuals similar to ps1 games and simulating other limitations they had
-<br>and experimented with a different prespective and controls inspired by original Resident Evil and Silent Hill games
-
 https://github.com/user-attachments/assets/2394da48-69ad-43c9-8a89-f261b77b139c
 
 # Retro look (Guide)
