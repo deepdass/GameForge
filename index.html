@@ -57,6 +57,8 @@
       gap: 1px;
       background: #333;
       margin: 16px;
+      border-radius: 8px;
+      overflow: hidden;
     }
 
     .card {
@@ -66,6 +68,60 @@
 
     .card h3 { margin-bottom: 8px; }
     .card p  { color: #888; font-size: 14px; }
+
+    .shipped-section {
+      padding: 64px 32px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+ 
+    .shipped-section .label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--secondary-color);
+      margin-bottom: 12px;
+    }
+ 
+    .shipped-section h2 {
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      margin-left: 14px;
+    }
+ 
+    .shipped-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: #232328;
+      border: 1px solid #232328;
+      margin-bottom: 24px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+ 
+    .shipped-item {
+      background: #18181c;
+      padding: 20px 24px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+ 
+    .shipped-item h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+ 
+    .shipped-item p {
+      font-size: 14px;
+      color: #5a5a68;
+      line-height: 1.3;
+    }
 
     .cta-form {
       display: flex;
@@ -233,7 +289,7 @@
   </nav>
 
   <div class="hero">
-    <h1>Build.<br> Ship.<br>Level Up.</h1>
+    <h1>Forge.<br> Ship.<br>Level Up.</h1>
     <p>GameForge is where teenagers build real games, ship them publicly, earn prizes, and experience the full game development cycle -- from first commit to player feedback.</p>
     <a href="myproject.html">
       <button>RSVP now →</button>
@@ -260,17 +316,48 @@
     </div>
   </div>
 
-<div class="cta-section">
-  <h2>Ready to<br><em>forge</em><br>your game?</h2>
-  <p>Free to join. Ship something real.</p>
-  
-  <div class="cta-form">
-    <input type="email" placeholder="orpheus@hackclub.com">
-    <a href="myproject.html">
-    <button class="btn-primary">RSVP now →</button>
-    </a>
+  <div class="shipped-section">
+    <h2>What counts as<br>a shipped game?</h2>
+ 
+    <div class="shipped-grid">
+      <div class="shipped-item">
+        <div>
+          <h4>Playable build</h4>
+          <p>A web build on itch.io, or downloadable builds for Windows, Mac, or Linux. Any Player around the world must be able to play it.</p>
+        </div>
+      </div>
+      <div class="shipped-item">
+        <div>
+          <h4>Fits the constraint</h4>
+          <p>Your game must be built around the chosen constraint. The constraint should be central to the design, not an afterthought.</p>
+        </div>
+      </div>
+      <div class="shipped-item">
+        <div>
+          <h4>Should be fun</h4>
+          <p>It should have a gameplay loop - it needs to feel like a game.</p>
+        </div>
+      </div>
+      <div class="shipped-item">
+        <div>
+          <h4>Open source</h4>
+          <p>Your source code must be publicly available on GitHub.</p>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+  
+  <div class="cta-section">
+    <h2>Ready to<br><em>forge</em><br>your game?</h2>
+    <p>Free to join. Ship something real.</p>
+    
+    <div class="cta-form">
+      <input type="email" placeholder="orpheus@hackclub.com">
+      <a href="myproject.html">
+      <button class="btn-primary">RSVP now →</button>
+      </a>
+    </div>
+  </div>
 
 <div class="faq-section">
   <h2>FAQ</h2>
