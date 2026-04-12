@@ -14,23 +14,23 @@
     body { font-family: 'Inter', sans-serif; background: var(--primary-color); color: white; }
 
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      background: var(--primary-color);
-      padding: 8px 12px;
-      font-size: 26px;
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      border-bottom: 1px solid #333;
-      z-index: 99;
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        background: var(--primary-color);
+        padding: 8px 16px;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        border-bottom: 1px solid #333;
+        z-index: 99;
     }
 
     .nav-logo {
-      font-size: 30px;
+      font-size: 24px;
       font-weight: 700;
       color: var(--secondary-color);
     }
+    
     .nav-logo span {
       color: white;
     }
@@ -41,15 +41,15 @@
     }
 
     .nav-tab {
-      font-size: 13px;
-      padding: 8px 16px;
+      font-size: 12px;
+      padding: 7px 14px;
       border-radius: 2px;
       cursor: pointer;
-      color: #5a5a68;
+      color: var(--muted);
       border: none;
       background: transparent;
       text-decoration: none;
-      transition: background 0.2s, color 0.2s;
+      transition: background 0.15s, color 0.15s;
     }
 
     .nav-tab:hover {
@@ -98,8 +98,8 @@
         <a href="index.html" style="text-decoration: none; color: var(--secondary-color);">Game<span>Forge</span></a>
     </div>
     <div class="nav-tabs">
-      <a href="myproject.html" class="nav-tab">My Projects</a>
-      <a href="gallery.html" class="nav-tab">Gallery</a>
+      <a href="myproject.html" class="nav-tab">Inventory</a>
+      <a href="gallery.html" class="nav-tab">Hall of Fame</a>
       <a href="library.html" class="nav-tab active">Library</a>
     </div>
     <div class = "profile_pic">
