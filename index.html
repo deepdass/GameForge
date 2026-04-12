@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>GameForge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@600;500;900&display=swap" rel="stylesheet">
   <style>
     :root {
     --primary-color: #0c0c0e;
@@ -9,7 +11,7 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: sans-serif; background: var(--primary-color); color: white; }
+    body { font-family: 'Inter', sans-serif; background: var(--primary-color); color: white; }
 
     nav {
       position: fixed;
@@ -32,9 +34,9 @@
     .hero p  { color: #888; margin-top: 8px; margin-bottom: 16px; max-width: 500px; font-size: 20px;}
 
     .nav-logo {
-      font-size: 28px;
-      font-weight: 600;
-      color: #e8ff47;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--secondary-color)
     }
     .nav-logo span {
       color: white;
@@ -53,36 +55,76 @@
 
     .cards {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
       gap: 1px;
       background: #333;
-      margin: 16px;
+      margin-left: 30px;
+      margin-right: 30px;
+      margin-bottom: 16px;
       border-radius: 8px;
       overflow: hidden;
     }
 
     .card {
       background: #18181c;
-      padding: 18px 24px;
+      padding: 20px 24px;
     }
 
     .card h3 { margin-bottom: 8px; }
-    .card p  { color: #888; font-size: 14px; }
+    .card p  { color: #888; font-size: 15px; }
 
-    .shipped-section {
-      padding: 64px 32px;
-      max-width: 860px;
+    .started-section{
+      padding: 28px 64px;
+      max-width: 1360;
       margin: 0 auto;
     }
- 
-    .shipped-section .label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      color: var(--secondary-color);
-      margin-bottom: 12px;
+
+    .started-section h2{
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .started-grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      background: #232328;
+      border: 1px solid #232328;
+      margin-bottom: 24px;
+      margin: 10px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .started-item {
+      background: #18181c;
+      padding: 20px 24px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
     }
  
+    .started-item h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 9px;
+    }
+ 
+    .started-item p {
+      color: #888; font-size: 15px;
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+
+    .shipped-section {
+      padding: 32px 42px;
+      max-width: 1260px;
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
+
     .shipped-section h2 {
       font-size: 40px;
       font-weight: 800;
@@ -90,6 +132,9 @@
       letter-spacing: -0.02em;
       margin-bottom: 16px;
       margin-left: 14px;
+    }
+    .shipped-section span {
+      color: var(--secondary-color);
     }
  
     .shipped-grid {
@@ -118,9 +163,9 @@
     }
  
     .shipped-item p {
-      font-size: 14px;
-      color: #5a5a68;
+      color: #888; font-size: 15px;
       line-height: 1.3;
+      margin-top: 10px;
     }
 
     .cta-form {
@@ -276,48 +321,76 @@
       transform: rotate(-5deg) scale(1.3);
       opacity: 0.85;
     }
-
+  
   </style>
 </head>
 <body>
 
   <nav>
     <strong class="nav-logo">Game<span>Forge</span></strong>
-    <a href="myproject.html">
+    <a href="gallery.html">
       <button>RSVP</button>
     </a>
   </nav>
 
   <div class="hero">
-    <h1>Forge.<br> Ship.<br>Level Up.</h1>
+    <h1>Forge.<br><span style="color: var(--secondary-color);">Ship.</span><br>Level Up.</h1>
     <p>GameForge is where teenagers build real games, ship them publicly, earn prizes, and experience the full game development cycle -- from first commit to player feedback.</p>
-    <a href="myproject.html">
+    <a href="gallery.html">
       <button>RSVP now →</button>
     </a>
-    <img src="orphmoji_yippee.png" alt="orphmoji_yippee" width="200" height="205" style="position: absolute; top:300px;left:1110px; transform: rotate(15deg);">
+    <img src="orphmoji_yippee.png" alt="orphmoji_yippee" width="200" height="205" style="position: absolute; top:377px;left:1170px; transform: rotate(15deg);">
+  <div>
+    <h1 style="font-size: 38px; margin-top: 38px; ">How it <span style="color: var(--secondary-color);">works</span></h1>
+  </div>
   </div>
 
   <div class="cards">
     <div class="card">
-      <h3>Get a Constraint</h3>
-      <p>Get a creative Constraint to build your game around.</p>
+      <h3>Pick a Constraint</h3>
+      <p>Choose a creative constraint to build your game around for the projects tab. This limits scope and fuels creativity.</p>
     </div>
     <div class="card">
       <h3>Build & Log</h3>
-      <p>Build your game and post devlogs to track your progress.</p>
+      <p>Build your game and post devlogs documenting problems, decisions, and progress and track your Code time via Hackatime, artlogs via Lapse.</p>
     </div>
     <div class="card">
       <h3>Ship It</h3>
-      <p>Ship it on itch.io with open source code on GitHub and earn coins.</p>
+      <p>Ship it on itch.io with open source code on GitHub and earn Sparks based on quality and effort.</p>
+    </div>
+    <div class="card">
+      <h3>Get Feedback</h3>
+      <p>Players give public, categorized feedback. Top voted feedback becomes your next challenge.</p>
     </div>
     <div class="card">
       <h3>Iterate & Earn</h3>
-      <p>Complete feedback challenges and recover your coins.</p>
+      <p>Complete the challenges, earn back Sparks, and write guides to help the next builder.</p>
     </div>
   </div>
 
+  <div class="started-section">
+    <h2>Get <span style="color: var(--secondary-color);">started</span></h2>
+
+    <div class="started-grid">
+      <div class="started-item">
+        <div>
+          <h4>Join the Community</h4>
+          <p>Hack Clubbers hang out on our <a href="https://slack.hackclub.com/" style="color: inherit;">Slack</a>. For GameForge join #gameforge, #gameforge-help and #gameforge-announcement, there you'll get updates, ask for help, and connect with other participants. </p>
+          <h4>Before you start forging</h4>
+          <p>Choose a game engine you want make sure it has a wakatime plugin and start tracking your code time using <a href="https://hackatime.hackclub.com/"  style="color: inherit;">hackatime</a> and <a href="https://lapse.hackclub.com/" style="color: inherit;">lapse</a> for artlogs. There are setup guides available on the hackatime site, also you can see the supported extensions but some might not be listed. 
+            <br>We track the time using hackatime as it allows us to track time accurately.</p>
+          <p>Make a Github repository for your game, make sure it's public.</p>
+          <h4>Create project</h4>
+          <p>After RSVPing go to 'My Projects' tab and create a new project, Choose a constraint from the random constraint generator and start Forging.</p>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
   <div class="shipped-section">
-    <h2>What counts as<br>a shipped game?</h2>
+    <h2 style="transform: translateX(-20px);">What counts as<br>a <span>shipped</span> game?</h2>
  
     <div class="shipped-grid">
       <div class="shipped-item">
@@ -353,7 +426,7 @@
     
     <div class="cta-form">
       <input type="email" placeholder="orpheus@hackclub.com">
-      <a href="myproject.html">
+      <a href="gallery.html">
       <button class="btn-primary">RSVP now →</button>
       </a>
     </div>
