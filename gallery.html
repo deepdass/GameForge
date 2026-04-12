@@ -17,8 +17,8 @@
       background: var(--primary-color);
       padding: 4px 12px;
       font-size: 26px;
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
       border-bottom: 1px solid #333;
       z-index: 99;
@@ -60,11 +60,13 @@
       color: black;
       font-weight: 700;
     }
+    .profile_pic{ display: flex; justify-content: flex-end;}
 
     .page { padding: 60px 32px 64px; max-width: 1100px; margin: auto; }
     .page-title {
       font-size: 32px; font-weight: 800;
-      padding: 32px 0 24px;
+      padding: 18px 0 12px;
+      text-align: center;
       border-bottom: 1px solid #232328; margin-bottom: 16px;
     }
 
@@ -74,11 +76,12 @@
     }
     .gallery-card {
       background: #18181c; padding: 24px; cursor: pointer;
-      display: flex; flex-direction: column; gap: 8px;
+      display: flex; flex-direction: column; gap: 6px;
       border: none; color: white; text-align: left; width: 100%;
     }
     .gallery-card:hover { background: #1e1e24; }
-    .card-name { font-size: 16px; font-weight: 700; }
+    .card-name { font-size: 18px; font-weight: 700; margin-top: 2px;}
+    .card-constraint {font-size: 14; color: #a6a6a6;}
     .card-desc { font-size: 14px; color: #5a5a68; line-height: 1.25; }
     .card-author { font-size: 12px; color: var(--secondary-color); margin-top: auto;}
 
@@ -96,7 +99,7 @@
       padding: 14px 18px; background: #131316;
       border-bottom: 1px solid #232328; flex-shrink: 0;
     }
-    .modal-nav-title { font-size: 16px; font-weight: 700; }
+    .modal-nav-title { font-size: 32px; font-weight: 700; }
     .modal-close {
       background: #18181c; border: 1px solid #232328; color: white;
       font-size: 14px; padding: 6px 16px; cursor: pointer; border-radius: 2px;
@@ -152,7 +155,8 @@
       <a href="gallery.html" class="nav-tab active">Gallery</a>
       <a href="library.html" class="nav-tab">Library</a>
     </div>
-    <div><img src="toro.jpg" alt="profile" width="35px" height="35px" style="margin-top: 4px; border-radius: 30%;"></div>
+    <div class = "profile_pic">
+      <img src="toro.jpg" alt="profile" width="35px" height="35px" style="margin-top: 4px; border-radius: 30%;"></div>
   </nav>
 
 <div class="page">
@@ -160,11 +164,30 @@
   <div class="gallery-grid">
 
     <button class="gallery-card" onclick="document.getElementById('d-skullward').showModal()">
-    <div style="width: 160px; height: 90px; overflow: hidden;">
+    <div style=" overflow: hidden;">
     <img src="skullward.png" alt="gameimg" style="width: 100%; height: 100%; object-fit: cover;"></div>
       <div class="card-name">SkullWard</div>
+      <div class="card-constraint" > Roguelike, 3D, Top-Down </div>
       <div class="card-desc">A 3D pixelated dungeon crawler with procedural generation.</div>
       <div class="card-author">@deepdass</div>
+    </button>
+
+    <button class="gallery-card" onclick="document.getElementById('d-retrohorror').showModal()">
+    <div style=" overflow: hidden;">
+    <img src="retrogame.png" alt="gameimg" style="width: 100%; height: 100%; object-fit: cover;"></div>
+      <div class="card-name">RetroHorror</div>
+      <div class="card-constraint" > Survival Horror, 3D, Fixed Camera </div>
+      <div class="card-desc">A retro horror game with unique visuals similar to ps1 games and simulating other limitations they had.</div>
+      <div class="card-author">@shheather</div>
+    </button>
+
+    <button class="gallery-card" onclick="document.getElementById('d-tokyodrift').showModal()">
+    <div style=" overflow: hidden;">
+    <img src="tokyodrift.jpg" alt="gameimg" style="width: 100%; height: 100%; object-fit: cover;"></div>
+      <div class="card-name">TokyoDrift</div>
+      <div class="card-constraint" > Drifitng, 3D, Mixed Camera </div>
+      <div class="card-desc">A drifting game inspired by Japanese car culture.</div>
+      <div class="card-author">@kunitakahashi</div>
     </button>
 
   </div>
@@ -178,19 +201,88 @@
     <button class="modal-close" onclick="this.closest('dialog').close()">✕ Close</button>
   </div>
   <div class="modal-body">
-    <div class="modal-game">
-      <iframe src="" data-src="https://itch.io/embed-upload/16159067?color=000000" allowfullscreen></iframe>
-    </div>
+    <div class="modal-game" data-src="https://itch.io/embed-upload/16159067?color=000000"></div>
     <div class="modal-profile">
       <div class="profile-top">
-        <div class="profile-avatar"><img src="toro.jpg" alt="profileimg" width="30px"; height="30px";></div>
+        <div class="profile-avatar">
+            <div style="position: relative; display: inline-block;">
+                <img src="toro.jpg" alt="profileimg" width="35" height="35" style="border-radius: 50%; display: block;">
+                <!--<img src="profile_overlay.png" alt="overlay" style="position: absolute; width: 140%; height: 140%; top: 0px; left: -8px;"> -->
+            </div>
+        </div>
         <div class="profile-name">Deep</div>
         <div class="profile-handle">@deepdass</div>
         <div class="profile-bio">i make games</div>
       </div>
       <div class="profile-links">
-        <a href="https://deepdass.itch.io" target="_blank" class="profile-link primary">itch.io ↗</a>
-        <a href="https://github.com/deepdass" target="_blank" class="profile-link">GitHub ↗</a>
+        <a href="https://deepdass.itch.io/skullward" target="_blank" class="profile-link primary">itch.io ↗</a>
+        <a href="https://github.com/deepdass/shibagamee" target="_blank" class="profile-link">GitHub ↗</a>
+      </div>
+      <div class="profile-about">
+        <strong># How and Why</strong>
+        I wanted to make a cute arcadey game, with powerups that focus more on mechanics rather than just stats(but i haven't added those yet) I love roguelikes and always wanted to build one, so I just started building one and added whatever came to my mind and seemed fun.
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="d-retrohorror">
+  <div class="modal-nav">
+    <div>
+      <div class="modal-nav-title">RetroHorror</div>
+    </div>
+    <button class="modal-close" onclick="this.closest('dialog').close()">✕ Close</button>
+  </div>
+  <div class="modal-body">
+    <div class="modal-game" data-src="null"></div>
+    <div class="modal-profile">
+      <div class="profile-top">
+        <div class="profile-avatar">
+            <div style="position: relative; display: inline-block;">
+                <img src="heather.jpg" alt="profileimg" width="35" height="35" style="border-radius: 50%; display: block;">
+                <!--<img src="profile_overlay.png" alt="overlay" style="position: absolute; width: 140%; height: 140%; top: 0px; left: -8px;"> -->
+            </div>
+        </div>
+        <div class="profile-name">heather </div>
+        <div class="profile-handle">@shheather</div>
+        <div class="profile-bio">I hate lock doors</div>
+      </div>
+      <div class="profile-links">
+        <a href="https://deepdass.itch.io/retrohorror" target="_blank" class="profile-link primary">itch.io ↗</a>
+        <a href="https://github.com/deepdass/retrohorror" target="_blank" class="profile-link">GitHub ↗</a>
+      </div>
+      <div class="profile-about">
+        <strong># How and Why</strong>
+        A retro horror game with unique visuals similar to ps1 games and simulating other limitations they had and experimented with a different prespective and controls inspired by original Resident Evil and Silent Hill games
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="d-tokyodrift">
+  <div class="modal-nav">
+    <div>
+      <div class="modal-nav-title">Tokyo Drift</div>
+    </div>
+    <button class="modal-close" onclick="this.closest('dialog').close()">✕ Close</button>
+  </div>
+  <div class="modal-body">
+    <div class="modal-game" data-src="null"></div>
+    <div class="modal-profile">
+      <div class="profile-top">
+        <div class="profile-avatar">
+            <div style="position: relative; display: inline-block;">
+                <img src="Takahashi.jpg" alt="profileimg" width="35" height="35" style="border-radius: 50%; object-fit: cover; display: block;">
+                <!--<img src="profile_overlay.png" alt="overlay" style="position: absolute; width: 140%; height: 140%; top: 0px; left: -8px;"> -->
+            </div>
+        </div>
+        <div class="profile-name">Kunimitsu Takahashi</div>
+        <div class="profile-handle">@kunitakahashi</div>
+        <div class="profile-bio"></div>
+      </div>
+      <div class="profile-links">
+        <a href="https://deepdass.itch.io/tokyodrift" target="_blank" class="profile-link primary">itch.io ↗</a>
+        <a href="https://github.com/deepdass/tokyodrift" target="_blank" class="profile-link">GitHub ↗</a>
       </div>
       <div class="profile-about">
         <strong># How and Why</strong>
@@ -202,15 +294,21 @@
 
 <script>
   document.querySelectorAll('dialog').forEach(d => {
-    d.addEventListener('close', () => {
-      const iframe = d.querySelector('iframe');
-      if (iframe) iframe.src = '';
+  d.addEventListener('toggle', e => {
+    if (e.newState !== 'open') return;
+    const game = d.querySelector('.modal-game');
+    const src = game.dataset.src;
+    if (src && src !== 'null') {
+      game.innerHTML = `<iframe src="${src}" allowfullscreen style="width:100%;height:100%;border:none;display:block;"></iframe>`;
+    } else {
+      game.innerHTML = `
+        <div class="no-build">
+          <p>Web build is not available for this game <br>Open on itch.io →</p>
+        </div>`;
+    }
     });
-    d.addEventListener('toggle', e => {
-      if (e.newState === 'open') {
-        const iframe = d.querySelector('iframe');
-        if (iframe) iframe.src = iframe.dataset.src;
-      }
+    d.addEventListener('close', () => {
+        d.querySelector('.modal-game').innerHTML = '';
     });
   });
 </script>
